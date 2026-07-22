@@ -1,4 +1,89 @@
-package PACKAGE_NAME;
+import java.util.List;
+import java.util.Scanner;
 
 public class WiseSayingController {
+
+    Scanner scanner = AppContext.scanner;
+    WiseSayingService wsService = AppContext.wsService;
+
+    // 명언 등록 과정
+    public void regAction(){
+
+        System.out.print("명언 : ");
+        String content = scanner.nextLine();
+        System.out.print("작가 : ");
+        String author = scanner.nextLine();
+
+        // 명언 객체 생성
+        WiseSaying ws = wsService.regWiseSaying(content, author);
+        // 메시지 출력
+        System.out.printf("%d번 명언이 등록되었습니다.\n", ws.getId());
+    }
+
+    // 명언 삭제 과정
+    public void delAction(Rq rq){
+        WiseSaying ws = getValidWiseSaying(rq);
+        if(ws == null) return;
+
+        wsService.delWiseSaying(ws.getId());
+        System.out.println(ws.getId() + "번 명언이 삭제되었습니다.");
+    }
+
+    // 명언 수정 과정
+    void modAction(Rq rq){
+        WiseSaying ws = getValidWiseSaying(rq);
+        if(ws == null) return;
+
+        System.out.println("명언(기존) : " + ws.getContent());
+        System.out.print("명언(수정) : ");
+        String newContent = scanner.nextLine();
+
+        System.out.println("작가(기존) : " + ws.getAuthor());
+        System.out.print("작가(수정) : ");
+        String newAuthor = scanner.nextLine();
+
+        wsService.modWiseSaying(ws, newContent, newAuthor); // 명언 갱신
+        System.out.println(ws.getId() + "번 명언이 수정되었습니다.");
+    }
+
+    // 명언 리스트 비어 있는지 검사
+    public boolean isListEmpty(){
+        if(wsService.isWsListEmpty()){ // wsList가 비어 있는지 검사
+            System.out.println("명언 목록이 없습니다.");
+            return true;
+        }
+        return false;
+    }
+
+    // rq에서 id를 꺼내 명언 리스트에 있으면 해당 객체 반환
+    public WiseSaying getValidWiseSaying(Rq rq){
+        if(isListEmpty()) return null; // wsList 비어 있는지 검사
+
+        int id = rq.getParamAsInt("id", 0); // rq에서 id 추출
+        if(id == 0){
+            System.out.println("잘못된 입력입니다.");
+            return null;
+        }
+
+        WiseSaying ws = wsService.findWiseSaying(id); // wsList에서 명언 찾기
+        if(ws == null){
+            System.out.println(id + "번 명언은 존재하지 않습니다.");
+        }
+        return ws; // 명언 객체 리턴
+    }
+
+    // 명언 목록 출력
+    public void showWiseSayingList(){
+        if(isListEmpty()) return; // 리스트 비어 있는지 검사
+
+        List<WiseSaying> list = wsService.findAllIdDesc();
+
+        System.out.println("번호 / 작가 / 명언 / 작성일 / 마지막 수정일");
+        System.out.println("----------------------------------------------------------------------");
+
+        for(WiseSaying ws : list){
+            System.out.printf("%d / %s / %s / %s / %s\n", ws.getId(), ws.getAuthor(),
+                    ws.getContent(), ws.getCreateDate(), ws.getModifyDate());
+        }
+    }
 }
