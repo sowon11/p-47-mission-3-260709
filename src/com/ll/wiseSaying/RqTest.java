@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 public class RqTest {
     public static void main(String[] args){
         testActionName();

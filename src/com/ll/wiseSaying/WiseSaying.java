@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 import java.time.LocalDateTime;
 
 public class WiseSaying {

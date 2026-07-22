@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 import java.util.Scanner;
 
 // 명언 게시판 클래스

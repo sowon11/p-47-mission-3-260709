@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

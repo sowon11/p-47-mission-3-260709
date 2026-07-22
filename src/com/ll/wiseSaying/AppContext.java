@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 import java.util.Scanner;
 
 public class AppContext {

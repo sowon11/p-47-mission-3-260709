@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 public class ExceptionExam {
     public static void main(String[] args){
 
