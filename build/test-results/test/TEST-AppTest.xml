@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AppTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-07-23T17:25:04.189Z" hostname="macui-MacBookPro.local" time="0.064">
+  <properties/>
+  <testcase name="등록" classname="AppTest" time="0.04"/>
+  <testcase name="등록 후 명언 번호 출력" classname="AppTest" time="0.001"/>
+  <testcase name="등록할 때마다 명언 번호 증가" classname="AppTest" time="0.001"/>
+  <testcase name="목록" classname="AppTest" time="0.002"/>
+  <testcase name="명언 삭제" classname="AppTest" time="0.003"/>
+  <testcase name="존재하지 않는 명언 삭제 예외 처리" classname="AppTest" time="0.001"/>
+  <testcase name="없는 명언 수정 예외 처리" classname="AppTest" time="0.001"/>
+  <testcase name="명언 수정" classname="AppTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

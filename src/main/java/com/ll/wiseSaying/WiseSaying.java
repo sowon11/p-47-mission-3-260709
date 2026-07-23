@@ -1,6 +1,7 @@
 package com.ll.wiseSaying;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class WiseSaying {
     private int id;
@@ -8,6 +9,8 @@ public class WiseSaying {
     private String author;
     private LocalDateTime createDate;
     private LocalDateTime modifyDate;
+    private static final DateTimeFormatter FORMATTER
+            = DateTimeFormatter.ofPattern("yyyy.MM.dd.HH:mm");
 
     // 생성자
     public WiseSaying(String content, String author){
@@ -36,13 +39,15 @@ public class WiseSaying {
     }
 
     // 작성일 가져오기
-    public LocalDateTime getCreateDate(){
-        return createDate;
+    public String getCreateDate(){
+        if(createDate == null) return "";
+        return createDate.format(FORMATTER);
     }
 
     // 수정일 가져오기
-    public LocalDateTime getModifyDate(){
-        return modifyDate;
+    public String getModifyDate(){
+        if(modifyDate == null) return "";
+        return modifyDate.format(FORMATTER);
     }
 
     // id 설정

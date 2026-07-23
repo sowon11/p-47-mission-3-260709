@@ -5,8 +5,12 @@ import java.util.Scanner;
 // 명언 게시판 클래스
 public class App {
 
-    private final Scanner scanner = AppContext.scanner;
+    Scanner scanner;
     WiseSayingController wsController = AppContext.wsController;
+
+    public App(Scanner scanner){
+        this.scanner = scanner;
+    }
 
     public void run(){
         System.out.println("== 명언 앱 ==");

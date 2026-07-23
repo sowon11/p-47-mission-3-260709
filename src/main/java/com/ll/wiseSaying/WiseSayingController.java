@@ -5,16 +5,19 @@ import java.util.Scanner;
 
 public class WiseSayingController {
 
-    Scanner scanner = AppContext.scanner;
     WiseSayingService wsService = AppContext.wsService;
+
+    private Scanner getScanner(){ // 최신 상태의 스캐너 가져오기
+        return AppContext.scanner;
+    }
 
     // 명언 등록 과정
     public void regAction(){
 
         System.out.print("명언 : ");
-        String content = scanner.nextLine();
+        String content = getScanner().nextLine();
         System.out.print("작가 : ");
-        String author = scanner.nextLine();
+        String author = getScanner().nextLine();
 
         // 명언 객체 생성
         WiseSaying ws = wsService.regWiseSaying(content, author);
@@ -38,11 +41,11 @@ public class WiseSayingController {
 
         System.out.println("명언(기존) : " + ws.getContent());
         System.out.print("명언(수정) : ");
-        String newContent = scanner.nextLine();
+        String newContent = getScanner().nextLine();
 
         System.out.println("작가(기존) : " + ws.getAuthor());
         System.out.print("작가(수정) : ");
-        String newAuthor = scanner.nextLine();
+        String newAuthor = getScanner().nextLine();
 
         wsService.modWiseSaying(ws, newContent, newAuthor); // 명언 갱신
         System.out.println(ws.getId() + "번 명언이 수정되었습니다.");
