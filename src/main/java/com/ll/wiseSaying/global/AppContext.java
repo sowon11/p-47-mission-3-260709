@@ -1,4 +1,9 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.global;
+
+import com.ll.wiseSaying.domain.system.controller.SystemController;
+import com.ll.wiseSaying.domain.wiseSaying.controller.WiseSayingController;
+import com.ll.wiseSaying.domain.wiseSaying.repository.WiseSayingRepository;
+import com.ll.wiseSaying.domain.wiseSaying.service.WiseSayingService;
 
 import java.util.Scanner;
 

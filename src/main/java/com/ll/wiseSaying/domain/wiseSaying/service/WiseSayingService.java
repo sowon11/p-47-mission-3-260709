@@ -1,4 +1,8 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.domain.wiseSaying.service;
+
+import com.ll.wiseSaying.domain.wiseSaying.entity.WiseSaying;
+import com.ll.wiseSaying.domain.wiseSaying.repository.WiseSayingRepository;
+import com.ll.wiseSaying.global.AppContext;
 
 import java.util.List;
 

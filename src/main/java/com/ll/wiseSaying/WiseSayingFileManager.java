@@ -3,7 +3,7 @@ package com.ll.wiseSaying;
 public class WiseSayingFileManager {
 
     /*
-    public static void saveWiseSayingFile(com.ll.wiseSaying.WiseSaying ws) {
+    public static void saveWiseSayingFile(com.ll.wiseSaying.domain.wiseSaying.entity.WiseSaying ws) {
         // 폴더가 없으면 생성
         File directory = new File("db/wiseSaying");
         if (!directory.exists()) {

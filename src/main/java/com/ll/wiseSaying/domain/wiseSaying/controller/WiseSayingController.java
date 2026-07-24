@@ -1,4 +1,9 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.domain.wiseSaying.controller;
+
+import com.ll.wiseSaying.domain.wiseSaying.service.WiseSayingService;
+import com.ll.wiseSaying.domain.wiseSaying.entity.WiseSaying;
+import com.ll.wiseSaying.global.AppContext;
+import com.ll.wiseSaying.global.Rq;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,7 +40,7 @@ public class WiseSayingController {
     }
 
     // 명언 수정 과정
-    void modAction(Rq rq){
+    public void modAction(Rq rq){
         WiseSaying ws = getValidWiseSaying(rq);
         if(ws == null) return;
 

@@ -1,5 +1,9 @@
 package com.ll.wiseSaying;
 
+import com.ll.wiseSaying.domain.wiseSaying.controller.WiseSayingController;
+import com.ll.wiseSaying.global.AppContext;
+import com.ll.wiseSaying.global.Rq;
+
 import java.util.Scanner;
 
 // 명언 게시판 클래스

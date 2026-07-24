@@ -1,4 +1,4 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.global;
 
 public class RqTest {
     public static void main(String[] args){

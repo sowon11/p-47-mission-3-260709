@@ -1,4 +1,6 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.domain.wiseSaying.repository;
+
+import com.ll.wiseSaying.domain.wiseSaying.entity.WiseSaying;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

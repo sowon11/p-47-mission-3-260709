@@ -1,5 +1,5 @@
 import com.ll.wiseSaying.App;
-import com.ll.wiseSaying.AppContext;
+import com.ll.wiseSaying.global.AppContext;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Scanner;

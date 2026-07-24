@@ -1,7 +1,7 @@
-import com.ll.wiseSaying.AppContext;
-import com.ll.wiseSaying.WiseSayingController;
-import com.ll.wiseSaying.WiseSayingRepository;
-import com.ll.wiseSaying.WiseSayingService;
+import com.ll.wiseSaying.global.AppContext;
+import com.ll.wiseSaying.domain.wiseSaying.controller.WiseSayingController;
+import com.ll.wiseSaying.domain.wiseSaying.repository.WiseSayingRepository;
+import com.ll.wiseSaying.domain.wiseSaying.service.WiseSayingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
